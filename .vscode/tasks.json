@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}\\main.cpp",
+                "${workspaceFolder}\\graphlib.cpp",
+                "${workspaceFolder}\\Figure.cpp",
+                "${workspaceFolder}\\MLine.cpp",
+                "${workspaceFolder}\\MArc.cpp",
+                "-o",
+                "${workspaceFolder}\\task5proto.exe",
+                "-L",
+                "C:\\msys64\\ucrt64\\lib",
+                "-lfreeglut",
+                "-lglfw3",
+                "-luser32",
+                "-lkernel32",
+                "-lshell32",
+                "-lgdi32",
+                "-lwinmm",
+                "-lgdi32",
+                "-lopengl32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe сборка активного файла",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ]
+}
