@@ -2,17 +2,23 @@
 
 #include "graphlib.h"
 
-MLine::MLine() = default;
+MLine::MLine() {}
 
-MLine::MLine(Point a, Point b, Color color) : Figure(a, color), end_(b) {}
+MLine::MLine(Point base, Point startLocal, Point endLocal, Color color)
+    : Figure(base, color), startLocal_(startLocal), endLocal_(endLocal) {}
 
-MLine::~MLine() = default;
+MLine::~MLine() {}
 
 void MLine::draw() const {
-  draw_line(base_.x, base_.y, end_.x, end_.y, color_.r, color_.g, color_.b);
+  const Point start{base_.x + startLocal_.x, base_.y + startLocal_.y};
+  const Point end{base_.x + endLocal_.x, base_.y + endLocal_.y};
+  draw_line(start.x, start.y, end.x, end.y, color_.r, color_.g, color_.b);
 }
 
-Point MLine::end() const { return end_; }
+Point MLine::startLocal() const { return startLocal_; }
 
-void MLine::setEnd(Point p) { end_ = p; }
+void MLine::setStart(Point p) { startLocal_ = p; }
 
+Point MLine::endLocal() const { return endLocal_; }
+
+void MLine::setEnd(Point p) { endLocal_ = p; }

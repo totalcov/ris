@@ -5,15 +5,19 @@
 class MLine final : public Figure {
 public:
   MLine();
-  MLine(Point a, Point b, Color color);
-  ~MLine() override;
+  MLine(Point base, Point startLocal, Point endLocal, Color color);
+  ~MLine();
 
-  void draw() const override;
+  void draw() const;
 
-  Point end() const;
+  Point startLocal() const;
+  void setStart(Point p);
+
+  Point endLocal() const;
   void setEnd(Point p);
 
 private:
-  Point end_{};
+Point startLocal_{};  
+Point endLocal_{}; // конечная точка
 };
 
