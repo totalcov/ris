@@ -2,10 +2,10 @@
 
 #include "graphlib.h"
 
-MLine::MLine() {}
-
 MLine::MLine(Point base, Point startLocal, Point endLocal, Color color)
-    : Figure(base, color), startLocal_(startLocal), endLocal_(endLocal) {}
+    : Figure(base, color), startLocal_(startLocal), endLocal_(endLocal) {
+      draw();
+    }
 
 MLine::~MLine() {}
 

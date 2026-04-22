@@ -4,8 +4,8 @@
 
 class MArc : public Figure {
 public:
-  MArc();
-  MArc(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color);
+  MArc(Point base = {}, Point centerLocal = {}, float radius = 0.0f, float startDeg = 0.0f,
+       float endDeg = 0.0f, Color color = {});
   ~MArc();
 
   void draw() const;

@@ -2,14 +2,12 @@
 
 #include "graphlib.h"
 
-MArc::MArc() {}
-
 MArc::MArc(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color)
     : Figure(base, color),
       centerLocal_(centerLocal),
       radius_(radius),
       startDeg_(startDeg),
-      endDeg_(endDeg) {}
+      endDeg_(endDeg) {draw;}
 
 MArc::~MArc() {}
 

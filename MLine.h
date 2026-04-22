@@ -4,8 +4,7 @@
 
 class MLine final : public Figure {
 public:
-  MLine();
-  MLine(Point base, Point startLocal, Point endLocal, Color color);
+  MLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {});
   ~MLine();
 
   void draw() const;

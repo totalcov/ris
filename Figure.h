@@ -12,8 +12,7 @@ struct Color {
 
 class Figure {
 public:
-  Figure();
-  Figure(Point base, Color color);
+  Figure(Point base = {}, Color color = {});
   virtual ~Figure();
 
 

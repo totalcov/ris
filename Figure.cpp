@@ -1,7 +1,5 @@
 #include "Figure.h"
 
-Figure::Figure() {}
-
 Figure::Figure(Point base, Color color) : base_(base), color_(color) {}
 
 Figure::~Figure() {}
