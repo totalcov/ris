@@ -1,14 +1,15 @@
 #pragma once
 
 #include "Figure.h"
+#include "MObject.h"
 
-class MArc : public Figure {
+class MArc : public virtual Figure, public virtual MOArc {
 public:
   MArc(Point base = {}, Point centerLocal = {}, float radius = 0.0f, float startDeg = 0.0f,
-       float endDeg = 0.0f, Color color = {});
+       float endDeg = 0.0f, Color color = {}, bool autoInit = true);
   ~MArc();
 
-  void draw() const;
+  void draw() const override;
 
   Point centerLocal() const;
   void setCenter(Point p);

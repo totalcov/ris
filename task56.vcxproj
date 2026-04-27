@@ -131,6 +131,9 @@
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="MLine.cpp" />
     <ClCompile Include="MArc.cpp" />
+    <ClCompile Include="MObject.cpp" />
+    <ClCompile Include="MSector.cpp" />
+    <ClCompile Include="MSegment.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +141,9 @@
     <ClInclude Include="Figure.h" />
     <ClInclude Include="MLine.h" />
     <ClInclude Include="MArc.h" />
+    <ClInclude Include="MObject.h" />
+    <ClInclude Include="MSector.h" />
+    <ClInclude Include="MSegment.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,12 +2,18 @@
 
 #include "graphlib.h"
 
-MArc::MArc(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color)
+MArc::MArc(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color, bool autoInit)
     : Figure(base, color),
       centerLocal_(centerLocal),
       radius_(radius),
       startDeg_(startDeg),
-      endDeg_(endDeg) {draw;}
+      endDeg_(endDeg) {
+  if (autoInit) {
+    MObject::printObjectText();
+    printArcObjectText();
+    draw();
+  }
+}
 
 MArc::~MArc() {}
 

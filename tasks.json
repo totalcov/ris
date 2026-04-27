@@ -13,9 +13,9 @@
                 "${workspaceFolder}\\Figure.cpp",
                 "${workspaceFolder}\\MLine.cpp",
                 "${workspaceFolder}\\MArc.cpp",
-                "${workspaceFolder}\\MObject.cpp",
-                "${workspaceFolder}\\MSector.cpp",
                 "${workspaceFolder}\\MSegment.cpp",
+                "${workspaceFolder}\\MSector.cpp",
+                "${workspaceFolder}\\MObject.cpp",
                 "-o",
                 "${workspaceFolder}\\task5proto.exe",
                 "-L",
@@ -43,7 +43,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe сборка активного файла",
+            "label": "C/C++: g++.exe Сборка активного файла",
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",

@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Figure.h"
+#include "MObject.h"
 
-class MLine final : public Figure {
+class MLine : public virtual Figure, public virtual MOLine {
 public:
-  MLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {});
+  MLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {}, bool autoInit = true);
   ~MLine();
 
-  void draw() const;
+  void draw() const override;
 
   Point startLocal() const;
   void setStart(Point p);
@@ -16,7 +17,6 @@ public:
   void setEnd(Point p);
 
 private:
-Point startLocal_{};  
-Point endLocal_{}; // конечная точка
+  Point startLocal_{};
+  Point endLocal_{};
 };
-

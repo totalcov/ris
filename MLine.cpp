@@ -2,10 +2,14 @@
 
 #include "graphlib.h"
 
-MLine::MLine(Point base, Point startLocal, Point endLocal, Color color)
+MLine::MLine(Point base, Point startLocal, Point endLocal, Color color, bool autoInit)
     : Figure(base, color), startLocal_(startLocal), endLocal_(endLocal) {
-      draw();
-    }
+  if (autoInit) {
+    MObject::printObjectText();
+    printLineObjectText();
+    draw();
+  }
+}
 
 MLine::~MLine() {}
 
