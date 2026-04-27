@@ -2,20 +2,20 @@
 
 Figure::Figure(Point base, Color color) : base_(base), color_(color) {}
 
-Figure::~Figure() {}
+Figure::~Figure() = default;
 
-void Figure::erase(){
-    const Color oldColor = color_;
-    color_ = {0.0f, 0.0f, 0.0f}; // Черный цвет для стирания
-    draw();
-    color_ = oldColor;
+void Figure::erase() {
+  const Color oldColor = color_;
+  color_ = {0.0f, 0.0f, 0.0f};
+  draw();
+  color_ = oldColor;
 }
 
-void Figure:: move(float dx, float dy){
-    erase(); // Стираем фигуру в старой позиции
-    base_.x += dx;
-    base_.y += dy;
-    draw();
+void Figure::move(float dx, float dy) {
+  erase();
+  base_.x += dx;
+  base_.y += dy;
+  draw();
 }
 
 Point Figure::base() const { return base_; }

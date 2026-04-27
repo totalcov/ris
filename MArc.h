@@ -2,13 +2,13 @@
 
 #include "Figure.h"
 
-class MArc : public Figure {
+class MArc : public virtual Figure {
 public:
   MArc(Point base = {}, Point centerLocal = {}, float radius = 0.0f, float startDeg = 0.0f,
        float endDeg = 0.0f, Color color = {});
-  ~MArc();
+  virtual ~MArc();
 
-  void draw() const;
+  virtual void draw() const;
 
   Point centerLocal() const;
   void setCenter(Point p);

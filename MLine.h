@@ -2,12 +2,12 @@
 
 #include "Figure.h"
 
-class MLine final : public Figure {
+class MLine : public virtual Figure {
 public:
   MLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {});
-  ~MLine();
+  virtual ~MLine();
 
-  void draw() const;
+  virtual void draw() const;
 
   Point startLocal() const;
   void setStart(Point p);
@@ -16,7 +16,6 @@ public:
   void setEnd(Point p);
 
 private:
-Point startLocal_{};  
-Point endLocal_{}; // конечная точка
+  Point startLocal_{};
+  Point endLocal_{};
 };
-

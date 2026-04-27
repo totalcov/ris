@@ -4,8 +4,8 @@
 
 MLine::MLine(Point base, Point startLocal, Point endLocal, Color color)
     : Figure(base, color), startLocal_(startLocal), endLocal_(endLocal) {
-      draw();
-    }
+  draw();
+}
 
 MLine::~MLine() {}
 
