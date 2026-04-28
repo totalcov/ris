@@ -7,7 +7,7 @@ MArc::MArc(Point base, Point centerLocal, float radius, float startDeg, float en
       centerLocal_(centerLocal),
       radius_(radius),
       startDeg_(startDeg),
-      endDeg_(endDeg) {draw;}
+      endDeg_(endDeg) {draw();}
 
 MArc::~MArc() {}
 
