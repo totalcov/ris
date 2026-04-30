@@ -17,6 +17,6 @@ public:
 
 private:
 Point startLocal_{};  
-Point endLocal_{}; // конечная точка
+Point endLocal_{};  
 };
 

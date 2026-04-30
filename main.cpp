@@ -17,9 +17,8 @@ void Main(void){
   wait4keyORmouse();
 
   figures[1]->setColor({1.0f, 1.0f, 1.0f});
- // figures[1]->draw();
   figures[3]->setColor({1.0f, 0.0f, 1.0f});
-//  figures[3]->draw();
+
 
   wait4keyORmouse();
 
