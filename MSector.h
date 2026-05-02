@@ -1,22 +1,32 @@
 #pragma once
 
-#include "Figure.h"
 #include "MArc.h"
 #include "MLine.h"
 
-class MSector : public virtual Figure, public MLine, public MArc {
+class MFirstSectorLine : public MLine {
 public:
-  MSector(Point base = {}, Point centerLocal = {}, float radius = 0.0f, float startDeg = 0.0f,
-          float endDeg = 0.0f, Color color = {});
-  virtual ~MSector();
+  MFirstSectorLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {})
+      : Figure(base, color), MLine(base, startLocal, endLocal, color) {}
+};
 
-  virtual void draw() const;
+class MSectorLine : public MLine {
+public:
+  MSectorLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {})
+      : Figure(base, color), MLine(base, startLocal, endLocal, color) {}
+};
 
-  void setCenter(Point p);
-  void setRadius(float r);
-  void setStartDeg(float deg);
-  void setEndDeg(float deg);
+class MSector : public MFirstSectorLine, public MSectorLine, public MArc, virtual public Figure {
+public:
+  MSector();
+  MSector(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color);
+  ~MSector() override;
 
-private:
-  void syncRays(); // функция нужна для синхронизации лучей с дугой, чтобы они всегда были на границах сектора
+  void draw() const override;
+
+  Point firstStartLocal() const;
+  Point firstEndLocal() const;
+  Point secondStartLocal() const;
+  Point secondEndLocal() const;
+
+  static Point pointOnArc(Point centerLocal, float radius, float deg);
 };

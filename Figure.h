@@ -22,9 +22,7 @@ public:
 
   void erase();
 
-  Point base() const;
-  void setBase(Point p);
-
+  
   Color color() const;
   void setColor(Color c);
 

@@ -2,15 +2,12 @@
 
 #include <iostream>
 
-OLine::OLine(Point base, Point startLocal, Point endLocal, Color color)
-    : Figure(base, color), MLine(base, startLocal, endLocal, color) {}
+OLine::OLine(Point base, Point startLocal, Point endLocal, Color color, const std::string& phrase)
+    : Figure(base, color), MLine(base, startLocal, endLocal, color), MObject(), printPhrase(phrase) {}
 
 OLine::~OLine() {}
 
-void OLine::print() const {
-  std::wcout << L"я линия\n";
-}
-
-void OLine::printPart(const wchar_t* ownerName) const {
-  std::wcout << L"\tя линия " << ownerName << L"\n";
+std::string OLine::oprint() const
+{
+    return "I am Line" + printPhrase;
 }

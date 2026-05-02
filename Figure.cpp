@@ -18,8 +18,8 @@ void Figure::move(float dx, float dy) {
   draw();
 }
 
-Point Figure::base() const { return base_; }
-void Figure::setBase(Point p) { base_ = p; }
-
 Color Figure::color() const { return color_; }
-void Figure::setColor(Color c) { color_ = c; }
+void Figure::setColor(Color c) {
+    color_ = c;
+    move(0,0); 
+    }

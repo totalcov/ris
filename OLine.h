@@ -4,10 +4,13 @@
 #include "MObject.h"
 
 class OLine : public MLine, public MObject {
-public:
-  OLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {});
-  virtual ~OLine();
+private:
+    std::string printPhrase;
 
-  virtual void print() const;
-  void printPart(const wchar_t* ownerName) const;
+
+  public:
+  OLine(Point base = {}, Point startLocal = {}, Point endLocal = {}, Color color = {}, const std::string& phrase = "");
+  ~OLine();
+
+  std::string oprint() const;
 };

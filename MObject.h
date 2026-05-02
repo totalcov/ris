@@ -1,13 +1,20 @@
 #pragma once
+#include <string>
 
-class MObject {
-public:
-  virtual ~MObject();
-  virtual void print() const;
-};
+class MObject{
+  private:
+    MObject *pNext;
+    MObject *pPrev; 
 
-class MNumber : public MObject {
-public:
-  virtual ~MNumber();
-  virtual void print() const;
+    static MObject *pFirst;
+    static MObject *pLast;
+
+    public:
+    MObject();
+
+    virtual ~MObject(); 
+
+    virtual std::string oprint() const;
+
+    static void printAll();
 };

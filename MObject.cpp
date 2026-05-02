@@ -1,15 +1,60 @@
-#include "MObject.h"
-
 #include <iostream>
 
-MObject::~MObject() {}
+#include "MObject.h"
 
-void MObject::print() const {
-  std::wcout << L"я объект\n";
+MObject* MObject::pFirst = nullptr;
+MObject* MObject::pLast = nullptr;
+
+
+MObject::MObject(): pNext(nullptr), pPrev(nullptr)
+{
+    if (pLast)
+    {
+        pLast->pNext = this;
+    }
+
+    pPrev = pLast;
+    pLast = this;
+    pNext = nullptr;
+
+    if (pFirst == nullptr)
+    {
+        pFirst = this;
+    }
 }
 
-MNumber::~MNumber() {}
+MObject::~MObject()
+{
+    if (pPrev)
+    {
+        pPrev->pNext = pNext;
+    }
+    else
+    {
+        pFirst = pNext;
+    }
 
-void MNumber::print() const {
-  std::wcout << L"я число 5\n";
+    if (pNext)
+    {
+        pNext->pPrev = pPrev;
+    }
+    else
+    {
+        pLast = pPrev;
+    }
+}
+
+std::string MObject::oprint() const{
+    return "I am object";
+}
+
+void MObject::printAll()
+{
+    MObject* now = pFirst;
+
+    while (now != nullptr)
+    {
+        std::cout << now->oprint() << std::endl;
+        now = now->pNext;
+    }
 }

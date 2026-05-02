@@ -1,23 +1,15 @@
 #pragma once
 
-#include "Figure.h"
 #include "MArc.h"
 #include "MLine.h"
 
-class MSegment : public virtual Figure, public MLine, public MArc {
+class MSegment : public MLine, public MArc, virtual public Figure {
 public:
-  MSegment(Point base = {}, Point centerLocal = {}, float radius = 0.0f, float startDeg = 0.0f,
-           float endDeg = 0.0f, Color color = {});
-  virtual ~MSegment();
+  MSegment();
+  MSegment(Point base, Point centerLocal, float radius, float startDeg, float endDeg, Color color);
+  ~MSegment() override;
 
-  virtual void draw() const;
+  void draw() const override;
 
-  void setCenter(Point p);
-  void setRadius(float r);
-  void setStartDeg(float deg);
-  void setEndDeg(float deg);
-
-private:
-  void syncChord(); // функция нужна для синхронизации хорды с дугой, чтобы она всегда была на границах сектора
-  
+  static Point pointOnArc(Point centerLocal, float radius, float deg);
 };
